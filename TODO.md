@@ -1,3 +1,0 @@
-E
-LOLS
-XAMPLE
