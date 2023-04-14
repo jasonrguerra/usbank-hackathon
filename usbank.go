@@ -43,27 +43,28 @@ type Transactions struct {
 }
 
 type Transaction struct {
-	AccountID              string  `json:"accountID"`
-	TransactionID          string  `json:"transactionID"`
-	CardNumber             string  `json:"cardNumber,omitempty"`
-	MaskedCardNumber       string  `json:"maskedCardNumber,omitempty"`
-	ReferenceTransactionID string  `json:"referenceTransactionID,omitempty"`
-	PostedTimestamp        string  `json:"postedTimestamp"`
-	TransactionTimestamp   string  `json:"transactionTimestamp"`
-	Channel                string  `json:"channel"`
-	Description            string  `json:"description"`
-	Memo                   string  `json:"memo,omitempty"`
-	DebitCreditMemo        string  `json:"debitCreditMemo"`
-	Category               string  `json:"category,omitempty"`
-	Subcategory            string  `json:"subcategory,omitempty"`
-	Reference              string  `json:"reference,omitempty"`
-	Status                 string  `json:"status"`
-	Amount                 float64 `json:"amount"`
-	Payee                  string  `json:"payee,omitempty"`
-	CheckNumber            string  `json:"checkNumber,omitempty"`
-	ForeignAmount          float64 `json:"foreignAmount,omitempty"`
-	ForeignCurrency        string  `json:"foreignCurrency,omityempty"`
-	TransactionType        string  `json:"transactionType"`
+	//	AccountID              string  `json:"accountID"`
+	//	TransactionID          string  `json:"transactionID"`
+	//	CardNumber             string  `json:"cardNumber,omitempty"`
+	//	MaskedCardNumber       string  `json:"maskedCardNumber,omitempty"`
+	//	ReferenceTransactionID string  `json:"referenceTransactionID,omitempty"`
+	//	PostedTimestamp        string  `json:"postedTimestamp"`
+	//	TransactionTimestamp   string  `json:"transactionTimestamp"`
+	//	Channel                string  `json:"channel"`
+	//	Description            string  `json:"description"`
+	//	Memo                   string  `json:"memo,omitempty"`
+	//	DebitCreditMemo        string  `json:"debitCreditMemo"`
+	//	Category               string  `json:"category,omitempty"`
+	Subcategory string `json:"subcategory,omitempty"`
+	//	Reference   string `json:"reference,omitempty"`
+	//	Status                 string  `json:"status"`
+	Amount float64 `json:"amount"`
+	//
+	// Payee                  string  `json:"payee,omitempty"`
+	// CheckNumber            string  `json:"checkNumber,omitempty"`
+	// ForeignAmount          float64 `json:"foreignAmount,omitempty"`
+	// ForeignCurrency        string  `json:"foreignCurrency,omityempty"`
+	// TransactionType        string  `json:"transactionType"`
 }
 
 func getAccountsIDsFromBank(auth Auth) ([]int, error) {

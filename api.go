@@ -62,3 +62,24 @@ func getAccountIDs(c *gin.Context) {
 	}
 	c.IndentedJSON(http.StatusOK, accountIDs)
 }
+
+func getCategory(c *gin.Context) {
+	auth, err := loadEnv()
+	if err != nil {
+		log.Fatal(err)
+	}
+	var data Category
+	accountIDs, err := getAccountsIDsFromBank(auth)
+	for i := 0; i < len(accountIDs); i++ {
+		transactions, err := getTransactionsFromBank(accountIDs[i], auth)
+		if err != nil {
+			log.Fatal(err)
+		}
+		for j := 0; j < len(transactions.Transactions); j++ {
+			data = catagorize(transactions.Transactions[j].Subcategory, transactions.Transactions[j].Amount, data)
+
+		}
+
+	}
+	c.IndentedJSON(http.StatusOK, data)
+}
