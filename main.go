@@ -22,11 +22,11 @@ import (
 
 func main() {
 	r := gin.Default()
+	r.Use(cors.Default())
 	r.GET("/ping", getPing)
 	r.GET("/balances", getBalances)
 	r.GET("/accountid", getAccountIDs)
 	r.GET("/transactions/:id", getTransactions)
 	r.GET("/categories", getCategory)
-	r.Use(cors.Default())
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
